@@ -333,66 +333,79 @@
             transform: translateY(0);
         }
 
-        /* Success Metrics */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        /* Impact Highlights Section */
+        .impact-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .metric-card {
+        .impact-item {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(139, 125, 107, 0.15);
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 2rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(139, 125, 107, 0.12);
             border: 2px solid rgba(200, 159, 126, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
             position: relative;
             overflow: hidden;
         }
 
-        .metric-card::before {
+        .impact-item::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 5px;
             height: 100%;
-            background: linear-gradient(135deg, rgba(200, 159, 126, 0.1), rgba(139, 157, 131, 0.1));
+            background: linear-gradient(180deg, #c89f7e, #8b9d83);
+            border-radius: 10px 0 0 10px;
             opacity: 0;
             transition: opacity 0.4s;
         }
 
-        .metric-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(200, 159, 126, 0.25);
+        .impact-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 15px 40px rgba(200, 159, 126, 0.2);
             border-color: #c89f7e;
         }
 
-        .metric-card:hover::before {
+        .impact-item:hover::before {
             opacity: 1;
         }
 
-        .metric-number {
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: #8b9d83;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            font-family: 'Georgia', serif;
+        .impact-icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, rgba(200, 159, 126, 0.2), rgba(139, 157, 131, 0.2));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
         }
 
-        .metric-label {
-            font-size: 1.05rem;
+        .impact-text {
+            flex: 1;
+        }
+
+        .impact-text .highlight {
+            color: #8b9d83;
+            font-weight: 700;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .impact-text p {
             color: #5c534a;
-            line-height: 1.6;
-            font-weight: 400;
-            position: relative;
-            z-index: 1;
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         /* Work Experience Timeline */
@@ -798,8 +811,8 @@
                 left: -11px !important;
             }
 
-            .metrics-grid {
-                grid-template-columns: 1fr;
+            .impact-item {
+                padding: 1.5rem;
             }
 
             .contact-info {
@@ -838,48 +851,52 @@
             <div class="hero-text">
                 <h1>Sierra Seciureanu</h1>
                 <p class="subtitle">Learning and Development Senior Manager</p>
-                <p class="summary">Dedicated Learning & Development Senior Manager with 12 years of progressive experience, transforming talent through effective program design, delivery, and measurement. With demonstrated experience applying adult learning strategies to program design and facilitation, my approach is defined by a collaborative, consultative partnership that focuses on organizational needs and priorities, aligning with the business to drive impact. I bring a strong background in strategic leadership, project management, consistently creating memorable onboarding programs and impactful employee development opportunities.</p>
+                <p class="summary">Accomplished Learning & Development Professional with extensive experience in leading large-scale talent transformation initiatives and creating programs that accelerate employee performance, optimize skill development, and strengthen organizational capability across diverse, multi-location teams. Highly committed to designing and executing comprehensive enterprise-wide learning strategies leveraging blended modalities, data-driven insights, and emerging technologies to optimize organizational capabilities, streamline processes, and deliver measurable business results for varied stakeholder groups. Recognized for driving strategic partnerships with senior stakeholders, shaping organizational culture, and implementing scalable initiatives that embed continuous learning, advance inclusion, and propel high-performance outcomes.</p>
                 <a href="#contact" class="cta-button">Let's Connect</a>
                 <a href="https://1drv.ms/p/c/3b333c240800da53/IQDOVTCSCpjTR5NQ5ClyxEubAWbEdGmtud5iFy_1hQ2LZ2U" target="_blank" class="cta-button cta-secondary">View Case Studies</a>
             </div>
         </div>
     </section>
 
-    <!-- Success Metrics Section -->
+    <!-- Impact Highlights Section -->
     <section id="metrics">
         <h2 class="fade-in">Impact & Growth</h2>
-        <div class="metrics-grid">
-            <div class="metric-card fade-in">
-                <div class="metric-number" data-target="9.8">0</div>
-                <div class="metric-label">Stakeholder Satisfaction Rating (from 8.2)</div>
+        <div class="impact-list">
+            <div class="impact-item fade-in">
+                <div class="impact-icon">🤖</div>
+                <div class="impact-text">
+                    <p>Created and deployed <span class="highlight">AI-driven learning solutions</span> resulting in a <span class="highlight">20% reduction</span> in contract renewal review timelines and enhanced organizational agility.</p>
+                </div>
             </div>
-            <div class="metric-card fade-in">
-                <div class="metric-number" data-target="3500">0</div>
-                <div class="metric-label">Employees Upskilled for Future Skills</div>
+            <div class="impact-item fade-in">
+                <div class="impact-icon">⏱️</div>
+                <div class="impact-text">
+                    <p>Reclaimed <span class="highlight">3,000+ weekly productivity hours</span> by architecting an enterprise-wide AI upskilling program for 1,500+ employees, saving employees an average of <span class="highlight">2–4 hours per week</span>.</p>
+                </div>
             </div>
-            <div class="metric-card fade-in">
-                <div class="metric-number" data-target="1100">0</div>
-                <div class="metric-label">Employees Enhanced Through AI Upskilling Program</div>
+            <div class="impact-item fade-in">
+                <div class="impact-icon">💰</div>
+                <div class="impact-text">
+                    <p>Fueled cost savings of <span class="highlight">$7,150 per employee</span> by creating and trialing the "store start" onboarding program, generating an average annual savings of <span class="highlight">$10.5 million</span>.</p>
+                </div>
             </div>
-            <div class="metric-card fade-in">
-                <div class="metric-number" data-target="1500">0</div>
-                <div class="metric-label">New Hires Onboarded Annually</div>
+            <div class="impact-item fade-in">
+                <div class="impact-icon">📊</div>
+                <div class="impact-text">
+                    <p>Pioneered a strategic scoping framework for stakeholder requests, improving project alignment and driving a <span class="highlight">20% increase</span> in stakeholder satisfaction scores.</p>
+                </div>
             </div>
-            <div class="metric-card fade-in">
-                <div class="metric-number" data-target="4.86">0</div>
-                <div class="metric-label">Employee Satisfaction (from 3.8)</div>
+            <div class="impact-item fade-in">
+                <div class="impact-icon">🏪</div>
+                <div class="impact-text">
+                    <p>Achieved operational cost savings of <span class="highlight">$1.2M</span> by spearheading an immersive operational training program leveraging performance data to streamline store operations and drive measurable business results.</p>
+                </div>
             </div>
-            <div class="metric-card fade-in">
-                <div class="metric-number" data-target="1.2">0</div>
-                <div class="metric-label">Million Savings in Operational Costs</div>
-            </div>
-            <div class="metric-card fade-in">
-                <div class="metric-number" data-target="4.9">0</div>
-                <div class="metric-label">Average Learner Satisfaction Score</div>
-            </div>
-            <div class="metric-card fade-in">
-                <div class="metric-number" data-target="1400">0</div>
-                <div class="metric-label">Retail Stores Supported in Digital Training Rollout</div>
+            <div class="impact-item fade-in">
+                <div class="impact-icon">⭐</div>
+                <div class="impact-text">
+                    <p>Earned top learner satisfaction scores (<span class="highlight">4.9/5</span>) by designing and delivering dynamic virtual and in-person training programs applying advanced adult learning principles.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -893,15 +910,12 @@
                 <div class="timeline-content">
                     <h3>Senior Manager – Learning and Development</h3>
                     <span class="timeline-date">Verizon | Nov 2022 - Dec 2025</span>
-                    <p style="color: #5c534a; margin-bottom: 1.5rem; line-height: 1.7;">Improved talent development effectiveness by strategically partnering with executive leadership to equip employees with the skills needed for the future by leveraging business analytics and skills assessments to inform high impact talent development and upskilling programs for over 3,500 employees.</p>
                     <ul>
-                        <li>Improved alignment of learning initiatives with organizational goals by consulting with executive level stakeholders to assess and determine learning needs</li>
-                        <li>Conduct comprehensive training needs analysis to identify skill gaps, develop, implement, and measure impact of training initiatives</li>
-                        <li>Improved decision-making effectiveness by using data-driven insights to drive business decisions and measure training impact</li>
-                        <li>Align training programs with business objectives, driving overall organizational growth</li>
-                        <li>Enhanced employee lifecycle management through leadership development and coaching</li>
-                        <li>Created a tailored program to upskill 3500+ employees for future skills to maintain competitive advantage utilizing market and internal skills data</li>
-                        <li>Created an AI focused upskilling program that enhanced capabilities and productivity across 1100+ employees</li>
+                        <li>Demonstrated measurable impact through analytics by conducting needs assessments, measuring training ROI, and presenting insights to leadership</li>
+                        <li>Strengthened the internal talent pipeline by creating and establishing a leadership curriculum that supported succession planning and prepared employees for future organizational roles</li>
+                        <li>Architected a data-driven upskilling strategy for 3,500+ employees by partnering with leadership to prioritize critical skill gaps and leveraged market data to forecast future-state requirements for key job families</li>
+                        <li>Propelled strategic executive decision-making by consulting with leadership to ensure learning initiatives directly supported organizational goals and business priorities</li>
+                        <li>Created and implemented a streamlined intake process and dashboard for training requests, optimized prioritization based on business priorities, and managed vendor relationships and budgets</li>
                     </ul>
                 </div>
             </div>
@@ -911,18 +925,14 @@
                 <div class="timeline-content">
                     <h3>Associate Director – Learning and Development</h3>
                     <span class="timeline-date">Verizon | Feb 2019 - Nov 2022</span>
-                    <p style="color: #5c534a; margin-bottom: 1.5rem; line-height: 1.7;">Successfully led a geographically dispersed team of Senior Trainers responsible for delivering both in person and virtual instruction, while managing the end-to-end deployment of critical onboarding programs for over 1,500 new hires annually. Implemented a trainer observation platform to ensure consistent delivery and quality across our training organization.</p>
                     <ul>
-                        <li>Boosted training delivery team's stakeholder satisfaction from 8.2 to a 9.8/10 rating by coaching and providing feedback, enabling performance development</li>
-                        <li>Established strategic partnerships across multiple business units enhancing cross team collaboration</li>
-                        <li>Completed Large-Scale Rollout of a new digital training tool for 1400 Retail stores</li>
-                        <li>Improved stakeholder engagement by adapting in-person training and consulting methodologies to a virtual format, creating, trialing, and refining support systems for stakeholders</li>
-                        <li>Improved training request prioritization by utilizing data and insights to manage 100+ requests annually</li>
-                        <li>Increased employee satisfaction scores by 14% from a 4.2 to 4.8/5 by spearheading an internal development Initiative for Learning and Development employees</li>
-                        <li>Developed and executed new observation / coaching process to provide relevant impactful feedback to Sr Trainers Globally, fostering a community of continuous learning and resulting in increased quality and consistency</li>
-                        <li>Drove Culture, Engagement, and Communication by creating a Culture Club responsible for increase employee satisfaction results from 3.8 to 4.86 out of 5</li>
-                        <li>Increased onboarding efficiency through strategic program management. Directed the end-to-end design, development, and implementation of a high-volume Retail Onboarding Program onboarding 1500+ employees annually</li>
-                        <li>Ensured continuity of onboarding program by transitioning the program from an in-person to an entirely virtual experience based on business needs, increasing program accessibility and effectiveness</li>
+                        <li>Established a global coaching culture by architecting a trainer observation framework used by 100+ Associate Directors for ongoing performance development, resulting in a 19.5% increase in learner satisfaction</li>
+                        <li>Standardized instructional quality through enterprise-wide calibration and the integration of feedback tools into Train-the-Trainer sessions and continuous development cycles</li>
+                        <li>Led and developed a team of 10 geographically dispersed Senior Trainers</li>
+                        <li>Championed digital transformation across 1,400 retail stores by executing a large-scale rollout of a new digital training tool and transitioning stakeholder support and training delivery to virtual</li>
+                        <li>Dramatically enhanced operational efficiency by leveraging data insights to prioritize and manage hundreds of training requests annually</li>
+                        <li>Pioneered a high-performance L&D culture by launching a "Culture Club" and internal upskilling programs, which led to a 14% increase in employee satisfaction scores</li>
+                        <li>Created a high-volume onboarding program for 1,500+ employees annually, transitioning it from in-person to fully virtual delivery, increasing program accessibility, speed to competency, and reducing new hire churn</li>
                     </ul>
                 </div>
             </div>
@@ -930,16 +940,14 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <h3>SR Trainer – Learning and Development</h3>
+                    <h3>Senior Trainer – Learning and Development</h3>
                     <span class="timeline-date">Verizon | June 2013 - Feb 2019</span>
-                    <p style="color: #5c534a; margin-bottom: 1.5rem; line-height: 1.7;">Applied advanced adult learning principles to develop and facilitate comprehensive programs, delivering high-impact training both virtually and in person, and driving measurable business results, such as a 15% decrease in operational costs at retail locations.</p>
                     <ul>
-                        <li>Delivered dynamic learning content through a blend of virtual and in-person modalities averaging a 4.9/5 learner satisfaction survey score</li>
-                        <li>Designed and facilitated comprehensive onboarding programs, integrating new hires into the company culture and accelerating their speed to competency</li>
-                        <li>Created and facilitated operational training for a leadership development program that ran nationally, decreasing operational costs at our retail locations by 15%</li>
-                        <li>Developed and executed a "Women of Wireless West" leadership development program for 350 women, encompassing end-to-end content creation, delivery and participant feedback analysis</li>
-                        <li>Evaluated program effectiveness through participant feedback and performance metrics, continuously refining content and delivery methods to maximize learning outcomes and organizational impact</li>
-                        <li>Improved learner engagement and training effectiveness by applying adult learning design principals to the creation and delivery of training materials, increasing level one survey scores from 4.8/5 to 5/5</li>
+                        <li>Achieved operational cost savings of $1.2M by spearheading an immersive operational training program leveraging performance data to streamline store operations and drive measurable business results</li>
+                        <li>Earned top learner satisfaction scores (4.9/5) by designing and delivering dynamic virtual and in-person training programs applying advanced adult learning principles</li>
+                        <li>Facilitated onboarding programs that integrated new hires into company culture and accelerated speed to competency to ensure readiness for immediate operational impact</li>
+                        <li>Led diversity and inclusion initiatives by launching the "Women of Wireless West" leadership program for 350 participants, which involved overseeing end-to-end content creation, delivery, and feedback analysis</li>
+                        <li>Drove continuous program improvement by evaluating training effectiveness through participant feedback and performance metrics, refining content and delivery methods to maximize organizational impact</li>
                     </ul>
                 </div>
             </div>
@@ -979,6 +987,32 @@
                     <span class="skill-tag">Design Thinking</span>
                 </div>
             </div>
+
+            <div class="skill-category fade-in">
+                <h3>Technical Strengths</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Workday LMS</span>
+                    <span class="skill-tag">Oracle LMS</span>
+                    <span class="skill-tag">Adobe Connect</span>
+                    <span class="skill-tag">Webex</span>
+                    <span class="skill-tag">Zoom</span>
+                    <span class="skill-tag">Co-Pilot</span>
+                    <span class="skill-tag">Gemini</span>
+                    <span class="skill-tag">ChatGPT</span>
+                    <span class="skill-tag">Adobe Creative Suite</span>
+                    <span class="skill-tag">Canva</span>
+                    <span class="skill-tag">Google Workspace</span>
+                    <span class="skill-tag">Microsoft Office Suite</span>
+                    <span class="skill-tag">Microsoft Teams</span>
+                    <span class="skill-tag">Smartsheet</span>
+                    <span class="skill-tag">Trello</span>
+                    <span class="skill-tag">Captivate</span>
+                    <span class="skill-tag">Final Cut Pro</span>
+                    <span class="skill-tag">Allego</span>
+                    <span class="skill-tag">Degreed</span>
+                    <span class="skill-tag">Keynote</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -989,22 +1023,6 @@
             <div class="skill-category fade-in" style="text-align: center;">
                 <h3>Bachelor of Arts (B.A.), Photography</h3>
                 <p style="color: #5c534a; font-size: 1.1rem; margin-top: 0.5rem;">University of Wisconsin – Eau Claire, Eau Claire, WI</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Memberships Section -->
-    <section id="memberships">
-        <h2 class="fade-in">Professional Memberships</h2>
-        <div class="skills-container">
-            <div class="skill-category fade-in">
-                <h3>Great Lakes Lead for PRISM</h3>
-                <span class="timeline-date" style="display: block; margin-bottom: 1rem;">Verizon | Dec 2024 - Dec 2025</span>
-                <p style="color: #5c534a; margin-bottom: 1.5rem; line-height: 1.7; font-style: italic;">PRISM is an employee resource group supporting the LGBTQIA+ community</p>
-                <ul style="list-style: none; margin-top: 1rem;">
-                    <li style="padding-left: 2rem; margin-bottom: 1rem; position: relative; color: #5c534a; line-height: 1.7;"><span style="position: absolute; left: 0; color: #c89f7e; font-size: 0.8rem;">◆</span>Managed and drove membership - increasing it in 2025 by 25%</li>
-                    <li style="padding-left: 2rem; margin-bottom: 1rem; position: relative; color: #5c534a; line-height: 1.7;"><span style="position: absolute; left: 0; color: #c89f7e; font-size: 0.8rem;">◆</span>Created opportunities for safe spaces and employee engagement, increasing culture and connectedness</li>
-                </ul>
             </div>
         </div>
     </section>
@@ -1055,49 +1073,6 @@
         // Observe all fade-in elements
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
-
-        // Animated counter for metrics
-        function animateCounter(element, target, duration = 2000) {
-            const start = 0;
-            const increment = target / (duration / 16);
-            let current = start;
-            const isDecimal = target % 1 !== 0;
-
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                
-                if (isDecimal) {
-                    element.textContent = current.toFixed(target.toString().split('.')[1]?.length || 1);
-                } else if (target > 100) {
-                    element.textContent = Math.floor(current).toLocaleString() + '+';
-                } else {
-                    element.textContent = current.toFixed(1);
-                }
-            }, 16);
-        }
-
-        // Trigger counters when metrics section is visible
-        const metricsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.metric-number');
-                    counters.forEach(counter => {
-                        const target = parseFloat(counter.getAttribute('data-target'));
-                        animateCounter(counter, target);
-                    });
-                    metricsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-
-        const metricsSection = document.querySelector('#metrics');
-        if (metricsSection) {
-            metricsObserver.observe(metricsSection);
-        }
 
         // Scroll to top button
         const scrollTopBtn = document.getElementById('scrollTop');
